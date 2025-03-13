@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #registro de la nueva app
-    'apps.libro',
+    'libro',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,16 @@ WSGI_APPLICATION = 'biblioteca.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        "NAME":"django_biblioteca",
+        'USER': 'postgres',
+        "PASSWORD":"Comercial*2112",
+        "HOST":"localhost",
+        "PORT":5432,
     }
 }
+
+#5432
 
 
 # Password validation
